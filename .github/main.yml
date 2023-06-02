@@ -1,4 +1,4 @@
-name: Main Kittyggram Workflow
+name: Main Kittygram Workflow
 on:
   push:
     branches:
@@ -7,8 +7,9 @@ jobs:
   checkout-and-print-tree:
     runs-on: ubuntu-latest
     steps:
-      - name: Check out repository code 
-        uses: actions/checkout@v3 
+      - name: Check out repository code  
+        uses: actions/checkout@v3  
       - name: Print project tree
         run: tree .
+ 
  
