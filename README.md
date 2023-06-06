@@ -66,8 +66,53 @@ docker container stop nginx-container
 Пользователи Windows и macOS могут управлять образами и контейнерами через приложение Docker Desktop
 
 ### Упаковка проекта в Docker-образ
+### Запуск проекта
+- Клонировать репозиторий и перейти в него в командной строке:
 ```
-- Клонируйте и разверните проект на своём компьютере
+git clone https://github.com/yandex-praktikum/kittygram_backend.git
+```
+### Backend
+```
+cd kittygram_backend
+```
+- Cоздать и активировать виртуальное окружение:
+```
+python3 -m venv env
+```
+* Если у вас Linux/macOS
+    ```
+    source env/bin/activate
+    ```
+* Если у вас windows
+    ```
+    source env/scripts/activate
+    ```
+```
+python3 -m pip install --upgrade pip
+```
+- Установить зависимости из файла requirements.txt:
+```
+pip install -r requirements.txt
+```
+- Выполнить миграции:
+```
+python3 manage.py migrate
+```
+- Запустить проект:
+```
+python3 manage.py runserver
+```
+### Frontend
+```
+cd kittygram_frontend
+```
+- Установить зависимости:
+```
+npm i
+```
+- Запустить проект:
+```
+npm run start
 ```
 ### Создание Dockerfile
 - В директории backend/ проекта Kittygram создайте файл под названием Dockerfile. 
